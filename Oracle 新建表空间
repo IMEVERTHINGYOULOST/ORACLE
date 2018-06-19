@@ -1,0 +1,10 @@
+使用oracle登录，执行如下：
+sqlplus system/123456 as sysdba
+create user test identified by test1234;
+grant dba to his with admin option;
+commit;
+connect test/test1234;
+create tablespace test datafile '/test/ora11b/his1.dbf' size 30000M autoextend on maxsize unlimited;
+alter tablespace test add datafile '/test/ora11b/his2.dbf' size 30000M autoextend on maxsize unlimited;
+alter user test default tablespace test;
+commit;
