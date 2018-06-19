@@ -8,3 +8,20 @@ create tablespace test datafile '/test/ora11b/his1.dbf' size 30000M autoextend o
 alter tablespace test add datafile '/test/ora11b/his2.dbf' size 30000M autoextend on maxsize unlimited;
 alter user test default tablespace test;
 commit;
+
+others:
+oracle数据库，实例ora11a，用户，表空间，四者之间的关系
+
+实例和数据库关系
+类似于物理和逻辑的关系，都是1对多，数据库可以开多个实例，实例也可以对应多个数据库，但是使用时，一个实例只能打开一个数据库，
+同时数据库是一个纯物理结构，实例包括数据库后台进程和内存区域，是一个复杂的内存结构和操作系统进程
+实例有多个表空间和用户
+
+用户：用户是在实例下建的，不同实例可以建立相同名字的用户
+
+表空间：表空间是管理数据库的逻辑概念，表空间只和物理文件（ORA,DBF）发生关系，一个表空间管理多个数据文件，一个文件只能属于一个表空间
+
+
+
+
+
